@@ -8,6 +8,8 @@
 </head>
 <body>
 
+
+
 <!-- 
 
 LOGINY I HASŁA UZUTKOWNIKÓW:
@@ -22,6 +24,7 @@ LOGINY I HASŁA UZUTKOWNIKÓW:
 
     <div class="container">
       <?php
+      session_start();
       require('config.inc.php');
       if($_POST)
       {
@@ -32,7 +35,6 @@ LOGINY I HASŁA UZUTKOWNIKÓW:
 
           $is_auth = authenticate($login, $psw_encrypted);
           if ($is_auth) {
-            session_start();
             $_SESSION['login'] = $login;
             $_SESSION['password'] = $psw_provided;
             $_SESSION['password_encrypted'] = $psw_encrypted;

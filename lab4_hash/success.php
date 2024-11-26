@@ -11,7 +11,7 @@
 session_start();
 if (!isset($_SESSION['login'])) {
     header("Location: login.php");
-    exit;
+    die();
 }
 ?>
 <div class="container">
